@@ -16,11 +16,6 @@
     "styled-components": "^5.0.0",
     "styled-normalize": "^8.0.7"
   },
-  "babel": {
-    "presets": [
-      "kcd-scripts/babel"
-    ]
-  },
   "eslintConfig": {
     "extends": "./node_modules/kcd-scripts/eslint.js",
     "rules": {

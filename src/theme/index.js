@@ -1,3 +1,5 @@
+import typographyVariants from './typographyVariants'
+
 export const colors = {
   background: {
     light: {
@@ -9,19 +11,19 @@ export const colors = {
   },
   borders: {
     main: {
-      color: '#F1F1F1',
+      color: '#E9C46A',
     },
   },
   primary: {
     main: {
-      color: '#D7385E',
+      color: '#E9C46A',
       contrastText: '#fff',
     },
   },
   secondary: {
     main: {
-      color: '#FB7B6B',
-      contrastText: '#fff',
+      color: '#FFF8E6',
+      contrastText: '#070C0E',
     },
   },
   tertiary: {
@@ -50,7 +52,6 @@ export const breakpoints = {
 export default {
   colors,
   breakpoints,
-  borderRadius: '12px',
-  transition: '200ms ease-in-out',
-  fontFamily: "'Fira Sans', sans-serif",
+  typographyVariants,
+  fontFamily: "'Fira Sans', 'Fira Sans Condensed', sans-serif",
 }
