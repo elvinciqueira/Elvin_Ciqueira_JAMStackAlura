@@ -16,11 +16,11 @@ export default function Capa() {
       backgroundPosition="left top, right bottom"
       backgroundSize={{
         md: '480px',
-        xs: '240px',
+        xs: '200px',
       }}
     >
       <Box.Center display="flex" flexDirection="column">
-        <Typography tag="h1" variant="title" margin={0}>
+        <Typography tag="h1" variant="title" textAlign="center" margin={0}>
           Mary Elizabeth
         </Typography>
         <Typography tag="h2" variant="subTitle" textAlign="center" margin={0}>
