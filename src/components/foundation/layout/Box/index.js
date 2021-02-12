@@ -13,6 +13,9 @@ export const Box = styled.div`
   ${propToStyle('backgroundPosition')}
   ${propToStyle('backgroundSize')}
   ${propToStyle('backgroundColor')}
+  ${propToStyle('margin')}
+  ${propToStyle('padding')}
+  ${propToStyle('border')}
 `
 
 Box.Container = styled.div`
@@ -24,12 +27,15 @@ Box.Container = styled.div`
   ${propToStyle('flexWrap')}
   ${propToStyle('backgroundImage')}
   ${propToStyle('backgroundRepeat')}
-  ${propToStyle('backgroundSize')}
   ${propToStyle('backgroundPosition')}
+  ${propToStyle('backgroundSize')}
   ${propToStyle('backgroundColor')}
+  ${propToStyle('margin')}
+  ${propToStyle('padding')}
+  ${propToStyle('border')}
 `
 
-Box.Center = styled.div`
+Box.LeftSide = styled.div`
   ${propToStyle('display')}
   ${propToStyle('flexDirection')}
   ${propToStyle('alignItems')}
@@ -38,7 +44,27 @@ Box.Center = styled.div`
   ${propToStyle('flexWrap')}
   ${propToStyle('backgroundImage')}
   ${propToStyle('backgroundRepeat')}
-  ${propToStyle('backgroundSize')}
   ${propToStyle('backgroundPosition')}
+  ${propToStyle('backgroundSize')}
   ${propToStyle('backgroundColor')}
+  ${propToStyle('margin')}
+  ${propToStyle('padding')}
+  ${propToStyle('border')}
+`
+
+Box.RightSide = styled.div`
+  ${propToStyle('display')}
+  ${propToStyle('flexDirection')}
+  ${propToStyle('alignItems')}
+  ${propToStyle('justifyContent')}
+  ${propToStyle('flex')}
+  ${propToStyle('flexWrap')}
+  ${propToStyle('backgroundImage')}
+  ${propToStyle('backgroundRepeat')}
+  ${propToStyle('backgroundPosition')}
+  ${propToStyle('backgroundSize')}
+  ${propToStyle('backgroundColor')}
+  ${propToStyle('margin')}
+  ${propToStyle('padding')}
+  ${propToStyle('border')}
 `

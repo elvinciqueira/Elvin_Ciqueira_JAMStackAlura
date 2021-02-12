@@ -9,6 +9,7 @@ const paragraph1 = css`
     font-size: ${theme.typographyVariants.paragraph1.fontSize};
     font-weight: ${theme.typographyVariants.paragraph1.fontWeight};
     line-height: ${theme.typographyVariants.paragraph1.lineHeight};
+    font-family: 'Fira Sans Condensed', sans-serif;
   `}
 `
 
