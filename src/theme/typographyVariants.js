@@ -28,8 +28,8 @@ const typographyVariants = {
     fontWeight: '400',
     lineHeight: 1.25, // 125%
   },
-  // [smallestException]
-  smallestException: {
+  // [paragraph2]
+  paragraph2: {
     fontSize: '12px',
     fontWeight: '400',
     lineHeight: 1, // 100%

@@ -5,9 +5,6 @@ export const colors = {
     light: {
       color: '#FFFFFF',
     },
-    main: {
-      color: '#F2F2F2',
-    },
   },
   borders: {
     main: {
@@ -31,13 +28,6 @@ export const colors = {
       color: '#070C0E',
       contrastText: '#fff',
     },
-    light: {
-      color: '#88989E',
-      contrastText: '#fff',
-    },
-  },
-  modes: {
-    dark: {},
   },
 }
 

@@ -31,16 +31,16 @@ const subTitle = css`
   `}
 `
 
-const smallestException = css`
+const paragraph2 = css`
   ${({theme}) => css`
-    font-size: ${theme.typographyVariants.smallestException.fontSize};
-    font-weight: ${theme.typographyVariants.smallestException.fontWeight};
-    line-height: ${theme.typographyVariants.smallestException.lineHeight};
+    font-size: ${theme.typographyVariants.paragraph2.fontSize};
+    font-weight: ${theme.typographyVariants.paragraph2.fontWeight};
+    line-height: ${theme.typographyVariants.paragraph2.lineHeight};
   `}
 `
 
 export const TextStyleVariants = {
-  smallestException,
+  paragraph2,
   paragraph1,
   title,
   subTitle,
