@@ -1,12 +1,13 @@
 import React from 'react'
 import styled, {css} from 'styled-components'
-import Logo from '../../../theme/Logo'
-import {breakPointsMedia} from '../../../theme/utils/breakPointsMedia'
-import Typography, {TextStyleVariants} from '../../foundation/Typography'
+import {lighten} from 'polished'
+import get from 'lodash/get'
+import Logo from '../../theme/Logo'
+import {breakPointsMedia} from '../../theme/utils/breakPointsMedia'
+import Typography, {TextStyleVariants} from '../foundation/Typography'
 
-const CabecalhoWrapper = styled.div`
-  background-color: #fff8e6;
-  border-top: 3px solid #e9c46a;
+const ContentWrapper = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   padding-left: 16px;
@@ -19,11 +20,12 @@ const NavBar = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   a {
     text-align: center;
     display: block;
     text-decoration: none;
-    color: #000;
+    color: ${({theme}) => get(theme, 'colors.text.main.color')};
     margin-right: 32px;
     transition: 200ms ease-in-out;
     ${breakPointsMedia({
@@ -37,17 +39,15 @@ const NavBar = styled.nav`
     &:hover,
     &:focus {
       font-weight: 500;
-      color: #070c0e;
+      color: ${({theme}) => lighten(0.3, get(theme, 'colors.text.main.color'))};
     }
   }
 `
 
 export default function Cabecalho() {
   return (
-    <CabecalhoWrapper>
-      <div>
-        <Logo />
-      </div>
+    <ContentWrapper>
+      <Logo />
       <NavBar>
         {[
           {url: '/sobre', name: 'Sobre Mim'},
@@ -60,6 +60,6 @@ export default function Cabecalho() {
           </li>
         ))}
       </NavBar>
-    </CabecalhoWrapper>
+    </ContentWrapper>
   )
 }

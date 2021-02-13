@@ -2,13 +2,18 @@ import typographyVariants from './typographyVariants'
 
 export const colors = {
   background: {
-    light: {
-      color: '#FFFFFF',
+    main: {
+      color: '#FFF8E6',
     },
   },
   borders: {
     main: {
       color: '#E9C46A',
+    },
+  },
+  text: {
+    main: {
+      color: '#070C0E',
     },
   },
   primary: {
