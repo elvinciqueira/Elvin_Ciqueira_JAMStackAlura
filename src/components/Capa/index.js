@@ -21,10 +21,21 @@ const text = [
 
 export default function Capa() {
   return (
-    <Box.Container
+    <Box
       flex="1"
       display="flex"
       flexWrap="wrap"
+      backgroundImage={{
+        md: "url('images/planta2.svg'), url('images/planta1.svg')",
+        xs:
+          "url('images/planta-mobile2.svg'), url('images/planta-mobile1.svg')",
+      }}
+      backgroundPosition={{
+        md: 'left top, right top',
+        xs: 'left top, right 120%',
+      }}
+      height="100vh"
+      backgroundRepeat="no-repeat"
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
@@ -40,6 +51,6 @@ export default function Capa() {
           {children}
         </Typography>
       ))}
-    </Box.Container>
+    </Box>
   )
 }

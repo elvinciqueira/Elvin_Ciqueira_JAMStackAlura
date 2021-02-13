@@ -6,6 +6,7 @@ import SectionDivider from '../src/components/common/SectionDivider'
 import SectionTitle from '../src/components/SectionTitle'
 import Card from '../src/components/Card'
 import Footer from '../src/components/Footer'
+import Typography from '../src/components/foundation/Typography'
 
 export default function Home() {
   return (
@@ -17,7 +18,11 @@ export default function Home() {
       </SectionDivider>
 
       <WrapperProjetos>
-        <SectionTitle>Meus Projetos</SectionTitle>
+        <SectionTitle>
+          <Typography as="h1" variant="title" textAlign="center">
+            Meus Projetos
+          </Typography>
+        </SectionTitle>
         <Card />
       </WrapperProjetos>
 
