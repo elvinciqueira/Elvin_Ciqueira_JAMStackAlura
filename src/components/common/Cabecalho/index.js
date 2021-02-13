@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, {css} from 'styled-components'
+import Logo from '../../../theme/Logo'
 import {breakPointsMedia} from '../../../theme/utils/breakPointsMedia'
 import Typography, {TextStyleVariants} from '../../foundation/Typography'
 
@@ -45,7 +46,7 @@ export default function Cabecalho() {
   return (
     <CabecalhoWrapper>
       <div>
-        <img src="images/Logo.svg" alt="Logo" />
+        <Logo />
       </div>
       <NavBar>
         {[
