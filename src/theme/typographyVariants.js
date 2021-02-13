@@ -3,36 +3,38 @@ const typographyVariants = {
   title: {
     fontSize: '60px',
     fontWeight: '400',
-    lineHeight: 1.25, // 125%
+    fontFamily: 'Fira Sans Condensed, sans-serif',
+    textTransform: 'uppercase',
   },
   titleXS: {
     fontSize: '24px',
     fontWeight: '500',
-    lineHeight: 1.25, // 125%
+    fontFamily: 'Fira Sans Condensed, sans-serif',
   },
   // [subTitle]
   subTitle: {
     fontSize: '48px',
     fontWeight: '300',
-    lineHeight: 1.25, // 125%
+    fontFamily: 'Fira Sans Condensed, sans-serif',
   },
-  // [subtitile2]
-  subtitle2: {
-    fontSize: '14px',
-    fontWeight: '400',
-    lineHeight: 1.25, // 125%
+  // [subTitle2]
+  subTitle2: {
+    fontSize: '32px',
+    fontWeight: '700',
+    fontFamily: 'Fira Sans Condensed, sans-serif',
   },
   // [paragraph1]
   paragraph1: {
     fontSize: '28px',
     fontWeight: '400',
-    lineHeight: 1.25, // 125%
+    fontFamily: 'Fira Sans Condensed, sans-serif',
   },
-  // [paragraph2]
-  paragraph2: {
-    fontSize: '12px',
+  // [bodyText]
+  bodyText: {
+    fontSize: '18px',
     fontWeight: '400',
-    lineHeight: 1, // 100%
+    lineHeight: 1.5,
+    fontFamily: 'Fira Sans, sans-serif',
   },
 }
 

@@ -8,8 +8,7 @@ const paragraph1 = css`
   ${({theme}) => css`
     font-size: ${theme.typographyVariants.paragraph1.fontSize};
     font-weight: ${theme.typographyVariants.paragraph1.fontWeight};
-    line-height: ${theme.typographyVariants.paragraph1.lineHeight};
-    font-family: 'Fira Sans Condensed', sans-serif;
+    font-family: ${theme.typographyVariants.paragraph1.fontFamily};
   `}
 `
 
@@ -17,9 +16,8 @@ const title = css`
   ${({theme}) => css`
     font-size: ${theme.typographyVariants.title.fontSize};
     font-weight: ${theme.typographyVariants.title.fontWeight};
-    line-height: ${theme.typographyVariants.title.lineHeight};
-    font-family: 'Fira Sans Condensed', sans-serif;
-    text-transform: uppercase;
+    font-family: ${theme.typographyVariants.title.fontFamily};
+    text-transform: ${theme.typographyVariants.title.textTransform};
   `}
 `
 
@@ -27,21 +25,11 @@ const subTitle = css`
   ${({theme}) => css`
     font-size: ${theme.typographyVariants.subTitle.fontSize};
     font-weight: ${theme.typographyVariants.subTitle.fontWeight};
-    line-height: ${theme.typographyVariants.subTitle.lineHeight};
-    font-family: 'Fira Sans Condensed';
-  `}
-`
-
-const paragraph2 = css`
-  ${({theme}) => css`
-    font-size: ${theme.typographyVariants.paragraph2.fontSize};
-    font-weight: ${theme.typographyVariants.paragraph2.fontWeight};
-    line-height: ${theme.typographyVariants.paragraph2.lineHeight};
+    font-family: ${theme.typographyVariants.subTitle.fontFamily};
   `}
 `
 
 export const TextStyleVariants = {
-  paragraph2,
   paragraph1,
   title,
   subTitle,
@@ -72,7 +60,6 @@ Typography.propTypes = {
   tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span']),
   variant: PropTypes.oneOf([
     'paragraph1',
-    'smallestException',
     'title',
     'titleXS',
     'subTitle',
