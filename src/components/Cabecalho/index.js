@@ -30,7 +30,7 @@ const NavBar = styled.nav`
     transition: 200ms ease-in-out;
     ${breakPointsMedia({
       xs: css`
-        ${TextStyleVariants.paragraph2}
+        ${TextStyleVariants.xs}
       `,
       md: css`
         ${TextStyleVariants.paragraph1}

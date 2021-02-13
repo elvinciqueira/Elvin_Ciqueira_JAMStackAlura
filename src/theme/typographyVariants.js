@@ -6,9 +6,9 @@ const typographyVariants = {
     fontFamily: 'Fira Sans Condensed, sans-serif',
     textTransform: 'uppercase',
   },
-  titleXS: {
-    fontSize: '24px',
-    fontWeight: '500',
+  xs: {
+    fontSize: '16px',
+    fontWeight: '400',
     fontFamily: 'Fira Sans Condensed, sans-serif',
   },
   // [subTitle]

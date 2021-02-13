@@ -29,10 +29,19 @@ const subTitle = css`
   `}
 `
 
+const xs = css`
+  ${({theme}) => css`
+    font-size: ${theme.typographyVariants.xs.fontSize};
+    font-weight: ${theme.typographyVariants.xs.fontWeight};
+    font-family: ${theme.typographyVariants.xs.fontFamily};
+  `}
+`
+
 export const TextStyleVariants = {
   paragraph1,
   title,
   subTitle,
+  xs,
 }
 
 const TextBase = styled.span`
@@ -61,7 +70,7 @@ Typography.propTypes = {
   variant: PropTypes.oneOf([
     'paragraph1',
     'title',
-    'titleXS',
+    'XS',
     'subTitle',
     'subTitle2',
   ]),
