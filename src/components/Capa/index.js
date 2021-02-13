@@ -2,6 +2,23 @@ import React from 'react'
 import {Box} from '../foundation/layout/Box'
 import Typography from '../foundation/Typography'
 
+const text = [
+  {
+    tag: 'h1',
+    variant: 'title',
+    children: 'Mary Elizabeth',
+    textAlign: 'center',
+    margin: 0,
+  },
+  {
+    tag: 'h2',
+    variant: 'subTitle',
+    children: 'Portfolio',
+    textAlign: 'center',
+    margin: 0,
+  },
+]
+
 export default function Capa() {
   return (
     <Box.Container
@@ -12,12 +29,17 @@ export default function Capa() {
       justifyContent="center"
       alignItems="center"
     >
-      <Typography tag="h1" variant="title" textAlign="center" margin={0}>
-        Mary Elizabeth
-      </Typography>
-      <Typography tag="h2" variant="subTitle" textAlign="center" margin={0}>
-        Portfolio
-      </Typography>
+      {text.map(({tag, variant, textAlign, margin, children}) => (
+        <Typography
+          key={tag}
+          tag={tag}
+          variant={variant}
+          textAlign={textAlign}
+          margin={margin}
+        >
+          {children}
+        </Typography>
+      ))}
     </Box.Container>
   )
 }
