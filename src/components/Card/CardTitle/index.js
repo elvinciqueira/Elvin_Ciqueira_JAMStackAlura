@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import Typography from '../../foundation/Typography'
 
 const Container = styled.div`
@@ -14,4 +15,8 @@ export default function CardTitle({children}) {
       </Typography>
     </Container>
   )
+}
+
+CardTitle.propTypes = {
+  children: PropTypes.node.isRequired,
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, {css} from 'styled-components'
 import get from 'lodash/get'
+import PropTypes from 'prop-types'
 import {Box} from '../../foundation/layout/Box'
 import {breakPointsMedia} from '../../../theme/utils/breakPointsMedia'
 import CardTitle from '../CardTitle'
@@ -70,11 +71,14 @@ const CardDestaque = styled.div`
   font-style: normal;
   font-weight: 300;
   text-transform: capitalize;
+
   position: absolute;
   top: 0;
   left: 0;
+
   background-color: #fff;
   color: ${({theme}) => get(theme, 'colors.text.main.color')};
+
   border: 1px solid ${({theme}) => get(theme, 'colors.text.main.color')};
   padding: 0.1rem 0.5rem;
   margin-top: 0.5rem;
@@ -96,7 +100,6 @@ export default function Cards({src, title, text, destaque}) {
   return (
     <CardContainer isDestaque={destaque}>
       <CardImage src={src} alt={title} />
-
       <Box width={{xs: '100%', md: destaque ? '30%' : '100%'}}>
         {destaque && <CardDestaque>Destaque</CardDestaque>}
 
@@ -106,4 +109,11 @@ export default function Cards({src, title, text, destaque}) {
       </Box>
     </CardContainer>
   )
+}
+
+Cards.propTypes = {
+  src: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string,
+  destaque: PropTypes.bool.isRequired,
 }
