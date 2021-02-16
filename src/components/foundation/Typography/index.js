@@ -29,6 +29,14 @@ const subTitle = css`
   `}
 `
 
+const subTitle2 = css`
+  ${({theme}) => css`
+    font-size: ${theme.typographyVariants.subTitle2.fontSize};
+    font-weight: ${theme.typographyVariants.subTitle2.fontWeight};
+    font-family: ${theme.typographyVariants.subTitle2.fontFamily};
+  `}
+`
+
 const xs = css`
   ${({theme}) => css`
     font-size: ${theme.typographyVariants.xs.fontSize};
@@ -41,6 +49,7 @@ export const TextStyleVariants = {
   paragraph1,
   title,
   subTitle,
+  subTitle2,
   xs,
 }
 
