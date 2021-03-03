@@ -13,8 +13,8 @@ const typographyVariants = {
   },
   // [subTitle]
   subTitle: {
-    fontSize: '3rem',
-    fontWeight: '300',
+    fontSize: '2.25rem',
+    fontWeight: '400',
     fontFamily: 'Fira Sans Condensed, sans-serif',
   },
   // [subTitle2]

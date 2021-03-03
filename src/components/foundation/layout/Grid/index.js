@@ -1,5 +1,6 @@
 import styled, {css} from 'styled-components'
 import {breakPointsMedia} from '../../../../theme/utils/breakPointsMedia'
+import {propToStyle} from '../../../../theme/utils/propToStyle'
 
 const Col = styled.div`
   padding-right: 1rem;
@@ -110,6 +111,14 @@ const Col = styled.div`
       }),
     })
   }}
+
+  ${propToStyle('display')}
+  ${propToStyle('alignItems')}
+  ${propToStyle('justifyContent')}
+  ${propToStyle('flexDirection')}
+  ${propToStyle('marginTop')}
+  ${propToStyle('paddingRight')}
+  ${propToStyle('flex')}
 `
 
 const Container = styled.div`
@@ -146,6 +155,11 @@ const Row = styled.div`
   flex-wrap: wrap;
   margin-right: -1rem;
   margin-left: -1rem;
+
+  ${propToStyle('flex')}
+  ${propToStyle('marginLeft')}
+  ${propToStyle('marginRight')}
+  ${propToStyle('justifyContent')}
 `
 
 export const Grid = {

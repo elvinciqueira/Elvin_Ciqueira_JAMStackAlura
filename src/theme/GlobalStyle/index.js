@@ -9,6 +9,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${({theme}) => theme.fontFamily};
   }
   ${normalize}
+
+  button {
+    cursor: pointer;
+  }
 `
 
 export default GlobalStyle

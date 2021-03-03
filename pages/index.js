@@ -1,4 +1,9 @@
 import React from 'react'
+
+import {Box} from '../src/components/foundation/layout/Box'
+import {Button} from '../src/components/common/Button'
+import Modal from '../src/components/common/Modal'
+import FormContato from '../src/components/patterns/FormContato'
 import Capa from '../src/components/Capa'
 import Cabecalho from '../src/components/Cabecalho'
 import WrapperProjetos from '../src/components/WrapperProjetos'
@@ -44,9 +49,19 @@ const cards = [
 ]
 
 export default function Home() {
+  const [isModalOpen, setModalState] = React.useState(false)
+
+  const handleModalOpen = () => setModalState(!isModalOpen)
+
+  const handleOnClose = () => setModalState(false)
+
   return (
     <>
       <Capa />
+
+      <Modal isOpen={isModalOpen} onClose={handleOnClose}>
+        {(propsDoModal) => <FormContato propsDoModal={propsDoModal} />}
+      </Modal>
 
       <SectionDivider>
         <Cabecalho />
@@ -60,6 +75,22 @@ export default function Home() {
         </SectionTitle>
         <Card cards={cards} />
       </WrapperProjetos>
+
+      <Box
+        margin="32px 0"
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Typography as="h2" variant="subTitle" textAlign="center">
+          Entre em contato
+        </Typography>
+
+        <Button type="button" onClick={handleModalOpen}>
+          +
+        </Button>
+      </Box>
 
       <SectionDivider>
         <Footer />
