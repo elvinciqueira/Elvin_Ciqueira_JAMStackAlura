@@ -40,6 +40,11 @@ function FormContent({onClose}) {
       })
   }
 
+  const isFormValid =
+    values.email.length === 0 ||
+    values.name.length === 0 ||
+    values.message.length === 0
+
   return (
     <form style={{width: '100%'}} onSubmit={handleSubmit}>
       <Box display="flex" alignItems="center" margin="0 0 32px 0">
@@ -88,7 +93,9 @@ function FormContent({onClose}) {
         <Typography as="h1" title="subTitle" style={{marginRight: '12px'}}>
           ENVIAR
         </Typography>
-        <Button type="submit">{'>'}</Button>
+        <Button type="submit" disabled={isFormValid}>
+          {'>'}
+        </Button>
       </Box>
     </form>
   )
