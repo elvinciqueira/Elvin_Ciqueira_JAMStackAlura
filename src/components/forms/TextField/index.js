@@ -13,6 +13,7 @@ const Input = styled(Typography)`
   padding: 8px 16px;
   outline: 0;
   margin-top: 8px;
+  border-radius: 4px;
 `
 
 Input.defaultProps = {
