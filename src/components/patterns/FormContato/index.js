@@ -1,16 +1,33 @@
 import React from 'react'
+import {Lottie} from '@crello/react-lottie'
+
 import {Box} from '../../foundation/layout/Box'
 import {Grid} from '../../foundation/layout/Grid'
 import TextField from '../../forms/TextField'
 import Typography from '../../foundation/Typography'
 import {Button} from '../../common/Button'
 import {useForm} from '../../../hooks/useForm'
+import errorAnimation from './animation/error.json'
+import successAnimation from './animation/success.json'
+
+const formStates = {
+  DEFAULT: 'DEFAULT',
+  ERROR: 'ERROR',
+  LOADING: 'LOADING',
+  DONE: 'DONE',
+}
 
 function FormContent({onClose}) {
   const {handleChange, handleSubmit, values} = useForm(handleContactForm)
+  const [isFormSubmited, setIsFormSubmited] = React.useState(false)
+  const [submissionStatus, setSubmissionStatus] = React.useState(
+    formStates.DEFAULT,
+  )
 
   function handleContactForm() {
     const {message, email, name} = values
+
+    setIsFormSubmited(true)
 
     const contactDTO = {
       message,
@@ -33,9 +50,13 @@ function FormContent({onClose}) {
         throw new Error('Não foi possível enviar sua mensagem :(')
       })
       .then((json) => {
+        setSubmissionStatus(formStates.DONE)
+
         console.log('json', json)
       })
       .catch((error) => {
+        setSubmissionStatus(formStates.ERROR)
+
         console.log(error)
       })
   }
@@ -97,6 +118,29 @@ function FormContent({onClose}) {
           {'>'}
         </Button>
       </Box>
+      {isFormSubmited && submissionStatus === formStates.DONE && (
+        <Box display="flex" justifyContent="center" margin="16px 0">
+          <Lottie
+            width="150px"
+            height="150px"
+            config={{
+              animationData: successAnimation,
+              loop: true,
+              autoplay: true,
+            }}
+          />
+        </Box>
+      )}
+
+      {isFormSubmited && submissionStatus === formStates.ERROR && (
+        <Box display="flex" justifyContent="center" margin="16px 0">
+          <Lottie
+            width="150px"
+            height="150px"
+            config={{animationData: errorAnimation, loop: true, autoplay: true}}
+          />
+        </Box>
+      )}
     </form>
   )
 }
