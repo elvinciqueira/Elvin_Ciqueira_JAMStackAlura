@@ -54,6 +54,7 @@ export default function Modal({isOpen, children, onClose}) {
       >
         {children({
           'data-modal-safe-area': 'true',
+          onClose,
         })}
       </motion.div>
     </ModalWrapper>
