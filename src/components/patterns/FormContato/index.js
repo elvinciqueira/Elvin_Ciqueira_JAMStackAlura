@@ -12,7 +12,7 @@ function FormContent() {
         <Typography as="h1" title="subTitle" style={{margin: '0 auto'}}>
           ENVIE SUA MENSAGEM
         </Typography>
-        <Button type="button">x</Button>
+        <Button type="button">{'x'}</Button>
       </Box>
 
       <div>
@@ -49,7 +49,7 @@ function FormContent() {
         <Typography as="h1" title="subTitle" style={{marginRight: '12px'}}>
           ENVIAR
         </Typography>
-        <Button type="submit">></Button>
+        <Button type="submit">{'>'}</Button>
       </Box>
     </form>
   )
