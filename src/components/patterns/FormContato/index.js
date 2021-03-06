@@ -1,4 +1,5 @@
 import React from 'react'
+// eslint-disable-next-line import/no-unresolved
 import {Lottie} from '@crello/react-lottie'
 
 import {Box} from '../../foundation/layout/Box'
@@ -7,7 +8,9 @@ import TextField from '../../forms/TextField'
 import Typography from '../../foundation/Typography'
 import {Button} from '../../common/Button'
 import {useForm} from '../../../hooks/useForm'
+// eslint-disable-next-line import/extensions
 import errorAnimation from './animation/error.json'
+// eslint-disable-next-line import/extensions
 import successAnimation from './animation/success.json'
 
 const formStates = {
