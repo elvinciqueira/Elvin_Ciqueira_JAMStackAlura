@@ -2,6 +2,7 @@ import React from 'react'
 import styled, {css} from 'styled-components'
 import PropTypes from 'prop-types'
 import get from 'lodash/get'
+import {Link} from '../../common/Link'
 import {propToStyle} from '../../../theme/utils/propToStyle'
 
 const paragraph1 = css`
@@ -60,7 +61,21 @@ const TextBase = styled.span`
   ${propToStyle('margin')}
 `
 
-export default function Typography({tag, variant, children, ...rest}) {
+export default function Typography({tag, variant, children, href, ...rest}) {
+  if (href) {
+    return (
+      <TextBase
+        as={Link}
+        variant={variant}
+        href={href}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...rest}
+      >
+        {children}
+      </TextBase>
+    )
+  }
+
   return (
     <TextBase as={tag} variant={variant} {...rest}>
       {children}

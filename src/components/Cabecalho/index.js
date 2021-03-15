@@ -1,7 +1,5 @@
 import React from 'react'
 import styled, {css} from 'styled-components'
-import {lighten} from 'polished'
-import get from 'lodash/get'
 import Logo from '../../theme/Logo'
 import {breakPointsMedia} from '../../theme/utils/breakPointsMedia'
 import Typography, {TextStyleVariants} from '../foundation/Typography'
@@ -23,11 +21,7 @@ const NavBar = styled.nav`
 
   a {
     text-align: center;
-    display: block;
-    text-decoration: none;
-    color: ${({theme}) => get(theme, 'colors.text.main.color')};
     margin-right: 32px;
-    transition: 200ms ease-in-out;
     ${breakPointsMedia({
       xs: css`
         ${TextStyleVariants.xs}
@@ -36,11 +30,6 @@ const NavBar = styled.nav`
         ${TextStyleVariants.paragraph1}
       `,
     })}
-    &:hover,
-    &:focus {
-      font-weight: 500;
-      color: ${({theme}) => lighten(0.3, get(theme, 'colors.text.main.color'))};
-    }
   }
 `
 
@@ -54,7 +43,12 @@ export default function Cabecalho() {
           {url: '/contato', name: 'Contato'},
         ].map(({url, name}) => (
           <li key={url}>
-            <Typography variant="paragraph1" tag="a" href={url}>
+            <Typography
+              variant="paragraph1"
+              tag="a"
+              href={url}
+              color="text.main"
+            >
               {name}
             </Typography>
           </li>
