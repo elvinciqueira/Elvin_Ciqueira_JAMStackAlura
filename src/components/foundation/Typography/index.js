@@ -30,6 +30,14 @@ const subTitle = css`
   `}
 `
 
+const bodyText = css`
+  ${({theme}) => css`
+    font-size: ${theme.typographyVariants.bodyText.fontSize};
+    font-weight: ${theme.typographyVariants.bodyText.fontWeight};
+    font-family: ${theme.typographyVariants.bodyText.fontFamily};
+  `}
+`
+
 const subTitle2 = css`
   ${({theme}) => css`
     font-size: ${theme.typographyVariants.subTitle2.fontSize};
@@ -52,6 +60,7 @@ export const TextStyleVariants = {
   subTitle,
   subTitle2,
   xs,
+  bodyText,
 }
 
 const TextBase = styled.span`
@@ -109,5 +118,6 @@ Typography.propTypes = {
     'XS',
     'subTitle',
     'subTitle2',
+    'bodyText',
   ]),
 }
