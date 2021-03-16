@@ -100,6 +100,7 @@ Typography.defaultProps = {
 
 Typography.propTypes = {
   children: PropTypes.node,
+  href: PropTypes.string,
   tag: PropTypes.oneOf([
     'h1',
     'h2',

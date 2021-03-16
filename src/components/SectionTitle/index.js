@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import {propToStyle} from '../../theme/utils/propToStyle'
 
 const Container = styled.section`
-  margin-bottom: 32px;
+  ${propToStyle('margin')};
 `
 
-export default function SectionTitle({children}) {
-  return <Container>{children}</Container>
+export default function SectionTitle({children, ...props}) {
+  return <Container {...props}>{children}</Container>
 }
 
 SectionTitle.propTypes = {
