@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import SectionDivider from '../../src/components/common/SectionDivider'
 import Cabecalho from '../../src/components/Cabecalho'
 import Footer from '../../src/components/Footer'
@@ -10,9 +10,17 @@ import Typography from '../../src/components/foundation/Typography'
 import Modal from '../../src/components/common/Modal'
 import {Button} from '../../src/components/common/Button'
 import FormContato from '../../src/components/patterns/FormContato'
+import {breakPointsMedia} from '../../src/theme/utils/breakPointsMedia'
 
 const Img = styled.img`
-  height: 380px;
+  ${breakPointsMedia({
+    xs: css`
+      height: 200px;
+    `,
+    md: css`
+      height: 380px;
+    `,
+  })}
   border: 2px solid ${({theme}) => theme.colors.borders.main.color};
 `
 
@@ -34,7 +42,12 @@ export default function Sobre() {
       </Modal>
 
       <SectionTitle>
-        <Typography as="h1" variant="title" textAlign="center">
+        <Typography
+          as="h1"
+          variant="title"
+          textAlign="center"
+          fontSize={{xs: '2rem', md: '3rem'}}
+        >
           Sobre Mim
         </Typography>
       </SectionTitle>
@@ -84,7 +97,12 @@ export default function Sobre() {
             </Typography>
           </Grid.Col>
           <Grid.Col value={{xs: 12, md: 4}}>
-            <Typography as="p" variant="bodyText" textAlign="right">
+            <Typography
+              as="p"
+              variant="bodyText"
+              textAlign={{xs: 'left', md: 'right'}}
+              margin={{xs: '16px 0', md: '0'}}
+            >
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Doloremque odio quasi vero illo sint repudiandae molestias,
               tempore non. Fuga dolor quo amet dicta repellendus officia error
@@ -99,7 +117,12 @@ export default function Sobre() {
       </Grid.Container>
 
       <SectionTitle>
-        <Typography as="h1" variant="title" textAlign="center">
+        <Typography
+          as="h1"
+          variant="title"
+          textAlign="center"
+          fontSize={{xs: '2rem', md: '3rem'}}
+        >
           Meus Repositórios
         </Typography>
       </SectionTitle>
@@ -112,6 +135,7 @@ export default function Sobre() {
               variant="subTitle2"
               textAlign="left"
               margin="0 0 16px 0"
+              fontSize={{xs: '1.50rem'}}
             >
               Projeto Report
             </Typography>
@@ -120,6 +144,7 @@ export default function Sobre() {
               variant="bodyText"
               href="github"
               textAlign="left"
+              fontSize={{xs: '1rem'}}
             >
               Projeto Report
             </Typography>
