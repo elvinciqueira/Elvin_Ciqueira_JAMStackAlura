@@ -18,4 +18,7 @@ export const Box = styled.div`
   ${propToStyle('margin')}
   ${propToStyle('boxShadow')}
   ${propToStyle('borderRadius')}
+
+  ${({theme, borderTheme}) =>
+    borderTheme && `border: 1px solid ${theme.colors.borders.main.color}`}
 `
