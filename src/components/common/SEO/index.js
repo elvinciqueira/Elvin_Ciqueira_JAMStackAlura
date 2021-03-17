@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 export default function SEO({headTitle}) {
   const hasHeadTitle = Boolean(headTitle)
-  const baseTitle = 'Instalura - Projeto Base do Alura Bootcamp JAMStack'
+  const baseTitle = 'Portifolio'
   const title = hasHeadTitle ? `${headTitle} | ${baseTitle}` : baseTitle
 
   const description =

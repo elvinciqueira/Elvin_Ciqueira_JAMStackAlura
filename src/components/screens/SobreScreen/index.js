@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, {css} from 'styled-components'
+import PropTypes from 'prop-types'
 import SectionTitle from '../../SectionTitle'
 import {Box} from '../../foundation/layout/Box'
 import {Grid} from '../../foundation/layout/Grid'
@@ -20,7 +21,7 @@ const Img = styled.img`
   border: 2px solid ${({theme}) => theme.colors.borders.main.color};
 `
 
-export default function SobreScreen() {
+export default function SobreScreen({projects}) {
   const {toggleModal} = useWebsitePageContext()
 
   return (
@@ -114,27 +115,42 @@ export default function SobreScreen() {
       <Grid.Container>
         <Grid.Row justifyContent="center" marginBottom="32px">
           <Grid.Col value={{xs: 12, md: 6}}>
-            <Typography
-              as="p"
-              variant="subTitle2"
-              textAlign="left"
-              margin="0 0 16px 0"
-              fontSize={{xs: '1.50rem'}}
-            >
-              Projeto Report
-            </Typography>
-            <Typography
-              as="a"
-              variant="bodyText"
-              href="github"
-              textAlign="left"
-              fontSize={{xs: '1rem'}}
-            >
-              Projeto Report
-            </Typography>
+            {projects.map(({title, link}) => (
+              <Box key={title} marginBottom="32px">
+                <Typography
+                  as="p"
+                  variant="subTitle2"
+                  textAlign="left"
+                  margin="0 0 16px 0"
+                  fontSize={{xs: '1.50rem'}}
+                >
+                  {title}
+                </Typography>
+                <Typography
+                  as="a"
+                  variant="bodyText"
+                  href="github"
+                  textAlign="left"
+                  fontSize={{xs: '1rem'}}
+                >
+                  {link}
+                </Typography>
+              </Box>
+            ))}
           </Grid.Col>
         </Grid.Row>
       </Grid.Container>
     </Box>
   )
+}
+
+SobreScreen.propTypes = {
+  projects: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+      link: PropTypes.string,
+      image: PropTypes.string,
+    }),
+  ).isRequired,
 }

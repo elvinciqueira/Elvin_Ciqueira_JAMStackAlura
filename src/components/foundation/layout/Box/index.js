@@ -16,6 +16,10 @@ export const Box = styled.div`
   ${propToStyle('backgroundPosition')}
   ${propToStyle('padding')}
   ${propToStyle('margin')}
+  ${propToStyle('marginRight')}
+  ${propToStyle('marginLeft')}
+  ${propToStyle('marginTop')}
+  ${propToStyle('marginBottom')}
   ${propToStyle('boxShadow')}
   ${propToStyle('borderRadius')}
 
