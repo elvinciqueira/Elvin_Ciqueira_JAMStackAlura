@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, {css} from 'styled-components'
+import Image from 'next/image'
 import {breakPointsMedia} from '../utils/breakPointsMedia'
 import {Link} from '../../components/common/Link'
 
@@ -19,7 +20,7 @@ const Img = styled.img`
 export default function Logo() {
   return (
     <Link href="/">
-      <Img src="images/Logo.svg" alt="Logo" />
+      <Image src="/images/Logo.svg" alt="Logo" width={500} height={70} />
     </Link>
   )
 }

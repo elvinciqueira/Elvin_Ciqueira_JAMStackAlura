@@ -22,6 +22,7 @@ export const Box = styled.div`
   ${propToStyle('marginBottom')}
   ${propToStyle('boxShadow')}
   ${propToStyle('borderRadius')}
+  ${propToStyle('maxWidth')}
 
   ${({theme, borderTheme}) =>
     borderTheme && `border: 1px solid ${theme.colors.borders.main.color}`}

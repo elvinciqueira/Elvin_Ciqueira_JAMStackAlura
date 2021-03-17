@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable require-await */
 import SobreScreen from '../../src/components/screens/SobreScreen'
 import websitePageHOC from '../../src/components/wrappers/WebsitePage/hoc'
@@ -15,9 +16,7 @@ export default websitePageHOC(SobreScreen, {
 })
 
 export async function getStaticProps() {
-  const repositories = data
-
   return {
-    props: repositories,
+    props: data,
   }
 }

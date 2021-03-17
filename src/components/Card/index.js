@@ -8,11 +8,7 @@ export default function Card({cards}) {
     <Grid.Container>
       <Grid.Row>
         {cards.map((card) => (
-          <Grid.Col
-            key={card.id}
-            value={{xs: 12, md: card.md}}
-            order={{xs: card.destaque, md: card.destaque}}
-          >
+          <Grid.Col key={card.title} value={{xs: 12, md: 4}}>
             <Cards {...card} />
           </Grid.Col>
         ))}

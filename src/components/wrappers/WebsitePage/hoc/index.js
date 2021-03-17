@@ -11,7 +11,7 @@ export default function websitePageHOC(
 ) {
   return (props) => (
     <WebsiteGlobalProvider>
-      <WebsitePageWrapper {...pageWrapperProps}>
+      <WebsitePageWrapper {...pageWrapperProps} {...props.pageWrapperProps}>
         <PageComponent {...props} />
       </WebsitePageWrapper>
     </WebsiteGlobalProvider>

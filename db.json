@@ -1,34 +1,44 @@
 {
+  "repositories": [
+    {
+      "title": "Legolas",
+      "link": "http://pudim.com.br/"
+    },
+    {
+      "title": "CATS",
+      "link": "http://pudim.com.br/"
+    },
+    {
+      "title": "Internet",
+      "link": "http://pudim.com.br/"
+    },
+    {
+      "title": "Otaco",
+      "link": "http://pudim.com.br/"
+    },
+    {
+      "title": "Boromir",
+      "link": "http://pudim.com.br/"
+    }
+  ],
   "projects": [
     {
-      "image": "/img/legolas.jpg",
+      "image": "https://images.unsplash.com/photo-1462903876006-77f6beb241b4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
       "title": "Legolas",
       "description": "They're taking the hobbits to Isengard",
-      "link": "http://pudim.com.br/"
+      "link": "legolas"
     },
     {
-      "image": "/img/allyourbase.jpg",
+      "image": "https://images.unsplash.com/photo-1462903876006-77f6beb241b4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
       "title": "CATS",
       "description": "All Your Base Are Belong To Us",
-      "link": "http://pudim.com.br/"
+      "link": "cats"
     },
     {
-      "image": "/img/internet.jpg",
+      "image": "https://images.unsplash.com/photo-1462903876006-77f6beb241b4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
       "title": "Internet",
       "description": "Welcome to the internet, I'll be your guide",
-      "link": "http://pudim.com.br/"
-    },
-    {
-      "image": "/img/otaco.jpg",
-      "title": "Otaco",
-      "description": "Corre que o otaco tá puto",
-      "link": "http://pudim.com.br/"
-    },
-    {
-      "image": "/img/tankcat.jpg",
-      "title": "Boromir",
-      "description": "One does not simply Tankcat into Mordor",
-      "link": "http://pudim.com.br/"
+      "link": "internet"
     }
   ]
 }

@@ -21,7 +21,7 @@ const Img = styled.img`
   border: 2px solid ${({theme}) => theme.colors.borders.main.color};
 `
 
-export default function SobreScreen({projects}) {
+export default function SobreScreen({repositories}) {
   const {toggleModal} = useWebsitePageContext()
 
   return (
@@ -115,7 +115,7 @@ export default function SobreScreen({projects}) {
       <Grid.Container>
         <Grid.Row justifyContent="center" marginBottom="32px">
           <Grid.Col value={{xs: 12, md: 6}}>
-            {projects.map(({title, link}) => (
+            {repositories.map(({title, link}) => (
               <Box key={title} marginBottom="32px">
                 <Typography
                   as="p"
@@ -145,12 +145,10 @@ export default function SobreScreen({projects}) {
 }
 
 SobreScreen.propTypes = {
-  projects: PropTypes.arrayOf(
+  repositories: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string,
-      description: PropTypes.string,
       link: PropTypes.string,
-      image: PropTypes.string,
     }),
   ).isRequired,
 }
