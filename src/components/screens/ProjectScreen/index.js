@@ -1,5 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
+import PropTypes from 'prop-types'
+
 import {Box} from '../../foundation/layout/Box'
 import {Grid} from '../../foundation/layout/Grid'
 import Typography from '../../foundation/Typography'
@@ -41,4 +43,11 @@ export default function ProjectScreen({title, description, image, link}) {
       </Grid.Container>
     </Box>
   )
+}
+
+ProjectScreen.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 }
