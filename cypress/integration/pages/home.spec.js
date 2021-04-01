@@ -10,7 +10,14 @@ describe('/pages/index/modal', () => {
       ).as('contactForm')
 
       const homeScreen = new HomeScreenPageObject(cy)
-      homeScreen.openModal().fillContactForm().submitContactForm()
+      homeScreen
+        .openModal()
+        .fillContactForm({
+          name: 'Elvin Ciqueira',
+          email: 'elvinciqueira@gmail.com',
+          message: 'mensagem de contato',
+        })
+        .submitContactForm()
 
       cy.wait('@contactForm').then(({response}) => {
         expect(response.body).to.haveOwnProperty('name')

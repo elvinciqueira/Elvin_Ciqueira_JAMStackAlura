@@ -11,10 +11,10 @@ export default class HomeScreenPageObject {
     return this
   }
 
-  fillContactForm() {
-    this.cy.get('input[name="name"]').type('Elvin Ciqueira')
-    this.cy.get('input[name="email"]').type('elvinciqueira@gmail.com')
-    this.cy.get('textarea[name="message"]').type('mensagem de contato')
+  fillContactForm({name, email, message}) {
+    this.cy.get('input[name="name"]').type(name)
+    this.cy.get('input[name="email"]').type(email)
+    this.cy.get('textarea[name="message"]').type(message)
 
     return this
   }
