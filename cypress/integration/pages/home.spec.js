@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import HomeScreenPageObject from '../../../src/components/screens/HomeScreen/HomeScreen.pageObject'
+
 describe('/pages/index/modal', () => {
   describe('when click on modal button and submit contact form', () => {
     it('should return success animation', () => {
@@ -7,20 +9,13 @@ describe('/pages/index/modal', () => {
         'https://contact-form-api-jamstack.herokuapp.com/message',
       ).as('contactForm')
 
-      cy.visit('/')
+      const homeScreen = new HomeScreenPageObject(cy)
+      homeScreen.openModal().fillContactForm().submitContactForm()
 
-      cy.get('button[type="button"]').contains('+').click()
-
-      cy.get('input[name="name"]').type('Elvin Ciqueira')
-      cy.get('input[name="email"]').type('elvinciqueira@gmail.com')
-      cy.get('textarea[name="message"]').type('mensagem de contato')
-
-      cy.get('button[type="submit"]').contains('>').click()
-
-      cy.wait('@contactForm').then((intercept) => {
-        expect(intercept.response.body).to.haveOwnProperty('name')
-        expect(intercept.response.body).to.haveOwnProperty('email')
-        expect(intercept.response.body).to.haveOwnProperty('message')
+      cy.wait('@contactForm').then(({response}) => {
+        expect(response.body).to.haveOwnProperty('name')
+        expect(response.body).to.haveOwnProperty('email')
+        expect(response.body).to.haveOwnProperty('message')
       })
     })
   })
