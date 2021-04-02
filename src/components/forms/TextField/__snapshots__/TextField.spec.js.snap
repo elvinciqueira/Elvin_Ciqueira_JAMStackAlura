@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextField /> when compononent renders should render an input with a label 1`] = `
+.c0 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: Fira Sans,sans-serif;
+}
+
+.c1 {
+  width: 100%;
+  border: 1px solid #E9C46A;
+  padding: 8px 16px;
+  outline: 0;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+<input
+  class="c0 c1"
+  id="name"
+  name="name"
+  placeholder="Nome"
+  type="text"
+  value="Elvin"
+/>
+`;
+
+exports[`<TextField /> when compononent renders should renders an input with type email 1`] = `
+.c0 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: Fira Sans,sans-serif;
+}
+
+.c1 {
+  width: 100%;
+  border: 1px solid #E9C46A;
+  padding: 8px 16px;
+  outline: 0;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+<input
+  class="c0 c1"
+  id="email"
+  name="email"
+  placeholder="Email"
+  type="email"
+  value="elvinciqueira@gmail.com"
+/>
+`;
+
+exports[`<TextField /> when compononent renders should renders as an input 1`] = `
+.c0 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: Fira Sans,sans-serif;
+}
+
+.c1 {
+  width: 100%;
+  border: 1px solid #E9C46A;
+  padding: 8px 16px;
+  outline: 0;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+<input
+  class="c0 c1"
+  id="name"
+  name="name"
+  placeholder="Nome"
+  type="text"
+  value="Elvin"
+/>
+`;
+
+exports[`<TextField /> when compononent renders should renders as an textarea 1`] = `
+.c0 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: Fira Sans,sans-serif;
+}
+
+.c1 {
+  width: 100%;
+  border: 1px solid #E9C46A;
+  padding: 8px 16px;
+  outline: 0;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+<textarea
+  class="c0 c1"
+  id="message"
+  name="message"
+  placeholder="Mensagem"
+  type="text"
+>
+  Elvin
+</textarea>
+`;

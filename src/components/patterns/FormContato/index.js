@@ -7,7 +7,7 @@ import {Grid} from '../../foundation/layout/Grid'
 import TextField from '../../forms/TextField'
 import Typography from '../../foundation/Typography'
 import {Button} from '../../common/Button'
-import {useForm} from '../../../hooks/useForm'
+import {useForm} from '../../../infra/hooks/forms/userForm'
 // eslint-disable-next-line import/extensions
 import errorAnimation from './animation/error.json'
 // eslint-disable-next-line import/extensions
