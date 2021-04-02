@@ -21,7 +21,7 @@ const formStates = {
   DONE: 'DONE',
 }
 
-function FormContent({onClose}) {
+export function FormContent({onClose, onSubmit}) {
   const initialValues = {
     message: '',
     email: '',
@@ -65,7 +65,7 @@ function FormContent({onClose}) {
     form.values.message.length === 0
 
   return (
-    <form style={{width: '100%'}} onSubmit={form.handleSubmit}>
+    <form style={{width: '100%'}} onSubmit={onSubmit || form.handleSubmit}>
       <Box display="flex" alignItems="center" margin="0 0 32px 0">
         <Typography as="h1" title="subTitle" style={{margin: '0 auto'}}>
           ENVIE SUA MENSAGEM
