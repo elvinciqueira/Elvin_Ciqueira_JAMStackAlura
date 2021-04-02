@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it renders 1`] = `
+.c0 {
+  font-weight: bold;
+  font-size: 1.75rem;
+  background: none;
+  border: 1px solid #E9C46A;
+  border-radius: 50%;
+  height: 46px;
+  width: 46px;
+}
+
+<button
+  className="c0"
+/>
+`;

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Box /> it renders 1`] = `
+<div
+  className=""
+/>
+`;
+
+exports[`<Box /> width and height props set width/height 1`] = `
+.c0 {
+  width: 50%;
+  height: 50%;
+}
+
+<div
+  className="c0"
+  height="50%"
+  width="50%"
+/>
+`;

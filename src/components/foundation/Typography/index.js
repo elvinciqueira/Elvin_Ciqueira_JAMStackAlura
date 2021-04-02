@@ -1,69 +1,12 @@
 import React from 'react'
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import get from 'lodash/get'
 import {Link} from '../../common/Link'
-import {propToStyle} from '../../../theme/utils/propToStyle'
+import {propToStyle} from '../../../theme/utils/propToStyle/index'
+import {TextStyleVariants} from './TextStyleVariants'
 
-const paragraph1 = css`
-  ${({theme}) => css`
-    font-size: ${theme.typographyVariants.paragraph1.fontSize};
-    font-weight: ${theme.typographyVariants.paragraph1.fontWeight};
-    font-family: ${theme.typographyVariants.paragraph1.fontFamily};
-  `}
-`
-
-const title = css`
-  ${({theme}) => css`
-    font-size: ${theme.typographyVariants.title.fontSize};
-    font-weight: ${theme.typographyVariants.title.fontWeight};
-    font-family: ${theme.typographyVariants.title.fontFamily};
-    text-transform: ${theme.typographyVariants.title.textTransform};
-  `}
-`
-
-const subTitle = css`
-  ${({theme}) => css`
-    font-size: ${theme.typographyVariants.subTitle.fontSize};
-    font-weight: ${theme.typographyVariants.subTitle.fontWeight};
-    font-family: ${theme.typographyVariants.subTitle.fontFamily};
-  `}
-`
-
-const bodyText = css`
-  ${({theme}) => css`
-    font-size: ${theme.typographyVariants.bodyText.fontSize};
-    font-weight: ${theme.typographyVariants.bodyText.fontWeight};
-    font-family: ${theme.typographyVariants.bodyText.fontFamily};
-  `}
-`
-
-const subTitle2 = css`
-  ${({theme}) => css`
-    font-size: ${theme.typographyVariants.subTitle2.fontSize};
-    font-weight: ${theme.typographyVariants.subTitle2.fontWeight};
-    font-family: ${theme.typographyVariants.subTitle2.fontFamily};
-  `}
-`
-
-const xs = css`
-  ${({theme}) => css`
-    font-size: ${theme.typographyVariants.xs.fontSize};
-    font-weight: ${theme.typographyVariants.xs.fontWeight};
-    font-family: ${theme.typographyVariants.xs.fontFamily};
-  `}
-`
-
-export const TextStyleVariants = {
-  paragraph1,
-  title,
-  subTitle,
-  subTitle2,
-  xs,
-  bodyText,
-}
-
-const TextBase = styled.span`
+const TextBase = styled('span')`
   ${({variant}) => TextStyleVariants[variant]}
   color: ${({theme, color}) => get(theme, `colors.${color}.color`)};
   ${propToStyle('textAlign')}
@@ -71,11 +14,19 @@ const TextBase = styled.span`
   ${propToStyle('fontSize')}
 `
 
-export default function Typography({tag, variant, children, href, ...rest}) {
+export default function Typography({
+  tag,
+  variant,
+  children,
+  href,
+  className,
+  ...rest
+}) {
   if (href) {
     return (
       <TextBase
         as={Link}
+        className={className}
         variant={variant}
         href={href}
         // eslint-disable-next-line react/jsx-props-no-spreading
@@ -87,7 +38,7 @@ export default function Typography({tag, variant, children, href, ...rest}) {
   }
 
   return (
-    <TextBase as={tag} variant={variant} {...rest}>
+    <TextBase as={tag} className={className} variant={variant} {...rest}>
       {children}
     </TextBase>
   )
@@ -103,6 +54,7 @@ Typography.propTypes = {
   href: PropTypes.string,
   tag: PropTypes.oneOf([
     'h1',
+    'div',
     'h2',
     'h3',
     'h4',
