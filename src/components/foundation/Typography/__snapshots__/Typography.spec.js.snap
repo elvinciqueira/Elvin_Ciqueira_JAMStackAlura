@@ -1,5 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Typography /> when component renders fontSize props sets font-size 1`] = `
+.c0 {
+  font-size: 1.75rem;
+  font-weight: 400;
+  font-family: Fira Sans Condensed,sans-serif;
+  font-size: 1rem;
+}
+
+<span
+  className="c0"
+  fontSize="1rem"
+/>
+`;
+
+exports[`<Typography /> when component renders it applies default styles 1`] = `
+.c0 {
+  font-size: 1.75rem;
+  font-weight: 400;
+  font-family: Fira Sans Condensed,sans-serif;
+}
+
+<span
+  className="c0"
+/>
+`;
+
+exports[`<Typography /> when component renders margin props sets margin 1`] = `
+.c0 {
+  font-size: 1.75rem;
+  font-weight: 400;
+  font-family: Fira Sans Condensed,sans-serif;
+  margin: 20px;
+}
+
+<span
+  className="c0"
+/>
+`;
+
 exports[`<Typography /> when component renders textAlign props sets text-align 1`] = `
 .c0 {
   font-size: 1.75rem;
