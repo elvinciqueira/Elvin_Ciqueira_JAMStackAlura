@@ -8,6 +8,7 @@ import TextField from '../../forms/TextField'
 import Typography from '../../foundation/Typography'
 import {Button} from '../../common/Button'
 import {useForm} from '../../../infra/hooks/forms/userForm'
+import {contactService} from '../../../services/contact/contactService'
 // eslint-disable-next-line import/extensions
 import errorAnimation from './animation/error.json'
 // eslint-disable-next-line import/extensions
@@ -21,56 +22,50 @@ const formStates = {
 }
 
 function FormContent({onClose}) {
-  const {handleChange, handleSubmit, values} = useForm(handleContactForm)
+  const initialValues = {
+    message: '',
+    email: '',
+    name: '',
+  }
+
   const [isFormSubmited, setIsFormSubmited] = React.useState(false)
   const [submissionStatus, setSubmissionStatus] = React.useState(
     formStates.DEFAULT,
   )
 
-  function handleContactForm() {
-    const {message, email, name} = values
+  const form = useForm({
+    initialValues,
+    onSubmit: (values) => {
+      const {message, email, name} = values
 
-    setIsFormSubmited(true)
+      setIsFormSubmited(true)
 
-    const contactDTO = {
-      message,
-      email,
-      name,
-    }
+      contactService
+        .execute({
+          name,
+          email,
+          message,
+        })
+        .then((response) => {
+          setSubmissionStatus(formStates.DONE)
 
-    fetch('https://contact-form-api-jamstack.herokuapp.com/message', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(contactDTO),
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json()
-        }
+          console.log('json', response)
+        })
+        .catch((error) => {
+          setSubmissionStatus(formStates.ERROR)
 
-        throw new Error('Não foi possível enviar sua mensagem :(')
-      })
-      .then((json) => {
-        setSubmissionStatus(formStates.DONE)
-
-        console.log('json', json)
-      })
-      .catch((error) => {
-        setSubmissionStatus(formStates.ERROR)
-
-        console.log(error)
-      })
-  }
+          console.log(error)
+        })
+    },
+  })
 
   const isFormValid =
-    values.email.length === 0 ||
-    values.name.length === 0 ||
-    values.message.length === 0
+    form.values.email.length === 0 ||
+    form.values.name.length === 0 ||
+    form.values.message.length === 0
 
   return (
-    <form style={{width: '100%'}} onSubmit={handleSubmit}>
+    <form style={{width: '100%'}} onSubmit={form.handleSubmit}>
       <Box display="flex" alignItems="center" margin="0 0 32px 0">
         <Typography as="h1" title="subTitle" style={{margin: '0 auto'}}>
           ENVIE SUA MENSAGEM
@@ -83,33 +78,33 @@ function FormContent({onClose}) {
       <div>
         <TextField
           name="name"
-          value={values.name}
+          value={form.values.name}
           label="Seu nome"
           id="name"
           tag="input"
-          onChange={handleChange}
+          onChange={form.handleChange}
         />
       </div>
       <div>
         <TextField
           type="email"
           name="email"
-          value={values.email}
+          value={form.values.email}
           label="Seu email"
           id="email"
           tag="input"
-          onChange={handleChange}
+          onChange={form.handleChange}
         />
       </div>
       <div>
         <TextField
           type="text"
           name="message"
-          values={values.message}
+          values={form.values.message}
           label="Sua mensagem"
           id="message"
           tag="textarea"
-          onChange={handleChange}
+          onChange={form.handleChange}
         />
       </div>
 

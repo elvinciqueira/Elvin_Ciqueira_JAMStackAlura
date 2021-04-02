@@ -1,23 +1,19 @@
 import React from 'react'
 
-const useForm = (callback) => {
-  const [values, setValues] = React.useState({
-    message: '',
-    name: '',
-    email: '',
-  })
+const useForm = ({initialValues, onSubmit}) => {
+  const [values, setValues] = React.useState(initialValues)
 
   const handleSubmit = (event) => {
     if (event) event.preventDefault()
 
-    callback()
+    onSubmit(values)
   }
 
   const handleChange = (event) => {
-    event.persist()
     const fieldName = event.target.getAttribute('name')
+    const {value} = event.target
 
-    setValues((state) => ({...state, [fieldName]: event.target.value}))
+    setValues((state) => ({...state, [fieldName]: value}))
   }
 
   return {
